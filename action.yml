@@ -49,7 +49,7 @@ inputs:
     default: ''
 
 outputs:
-  application_id:
+  app_id:
     description: 'ID of the created application.'
 runs:
   using: 'composite'
@@ -71,5 +71,5 @@ runs:
       shell: bash
     - run:  $GITHUB_ACTION_PATH/docker-compose.sh
       shell: bash
-    - run: echo "::set-output name=application_id::${{ steps.init.outputs.application_id }}"
+    - run: echo "::set-output name=app_id::${{ steps.init.outputs.application_id }}"
       shell: bash
