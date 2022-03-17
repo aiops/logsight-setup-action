@@ -71,9 +71,9 @@ The ID of the application that was created. This id is used by https://github.co
 ```
 uses: actions/logsight-init@master
 with:
-  username: admin
-  password: mypassword
-  application-name: myapp
- 
+  username: LOGSIGHT_USERNAME
+  password: LOGSIGHT_PASSWORD
+  application-name: {{ github.ref }}  # here can be any string name
+  
 #the rest of the input fields can be set optionally.
 ```
