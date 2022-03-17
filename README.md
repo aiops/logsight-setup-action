@@ -54,6 +54,10 @@ inputs:
     description: 'Logsight PORT. Use 443'
     required: false
     default: '443'
+  fluentbit_config:
+    description: 'If you want your own fluentbit config, use ONLY this entry to specifiy the config file location. If specified, this will override all other fluentbit related variables.'
+    required: false
+    default: ''
 
 ```
 
