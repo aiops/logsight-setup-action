@@ -71,11 +71,12 @@ The ID of the application that was created. This id is used by https://github.co
 ## Example usage
 
 ```
-uses: actions/logsight-init@master
+uses: aiops/logsight-setup-action@main
+id: setup
 with:
-  username: LOGSIGHT_USERNAME
-  password: LOGSIGHT_PASSWORD
-  application-name: {{ github.ref }}  # here can be any string name
+  username: ${{ secrets.LOGSIGHT_USERNAME }} # may not be a secret, but it is recommended
+  password: ${{ secrets.LOGSIGHT_PASSWORD }} # may not be a secret, but it is recommended
+  application_name: ${{ github.ref }}        # any string is accepted, we recommend using github.ref
   
 #the rest of the input fields can be set optionally.
 ```
