@@ -57,9 +57,9 @@ runs:
         username: ${{ inputs.username }}
         password: ${{ inputs.password }}
         application_name: ${{ inputs.application_name}}
-    - run: $GITHUB_ACTION_PATH/fluentbit_config_generator.sh ${{ inputs.fluentbit_inputname}} ${{ inputs.fluentbit_filelocation}} ${{ inputs.fluentbit_matchpattern}} ${{ steps.init.outputs.application_id}} ${{ github.sha }} ${{ inputs.fluentbit_message}} ${{ inputs.fluentbit_host }} ${{inputs.fluentbit_port}} ${{ inputs.username }} ${{ inputs.password }} > $GITHUB_ACTION_PATH/fluent-bit.conf
+    - run: fluentbit_config_generator.sh ${{ inputs.fluentbit_inputname}} ${{ inputs.fluentbit_filelocation}} ${{ inputs.fluentbit_matchpattern}} ${{ steps.init.outputs.application_id}} ${{ github.sha }} ${{ inputs.fluentbit_message}} ${{ inputs.fluentbit_host }} ${{inputs.fluentbit_port}} ${{ inputs.username }} ${{ inputs.password }} > $GITHUB_ACTION_PATH/fluent-bit.conf
       shell: bash
-    - run: cat $GITHUB_ACTION_PATH/fluent-bit.conf
+    - run: cat fluent-bit.conf
       shell: bash
-    - run: $GITHUB_ACTION_PATH/docker-compose up -d
+    - run: docker-compose.sh
       shell: bash
