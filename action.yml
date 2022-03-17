@@ -70,4 +70,6 @@ runs:
     - run: cat  $GITHUB_ACTION_PATH/fluent-bit.conf
       shell: bash
     - run:  $GITHUB_ACTION_PATH/docker-compose.sh
+      shell: bash echo "::set-output name=application_id::$output"
+    - run: echo "::set-output name=application_id::${{ steps.init.outputs.application_id }}"
       shell: bash
