@@ -1,5 +1,5 @@
 name: 'logsight-setup-action'
-description: 'Login, create application, and start log collection'
+description: 'Login, create application, and start log collection.'
 inputs:
   username:
     description: 'Basic auth username.'
