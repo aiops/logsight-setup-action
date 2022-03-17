@@ -61,10 +61,12 @@ inputs:
 
 ```
 
+If you provide your own fluentbit config file please refer to https://docs.fluentbit.io/manual/.
+
 ## Outputs
 
 #### `application_id`
-The ID of the application that was created. This id is used by https://github.com/aiops/logsight-verification-action
+The ID of the application that was created. This id is used by https://github.com/aiops/logsight-verification-action.
 
 ## Example usage
 
