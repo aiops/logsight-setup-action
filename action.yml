@@ -49,8 +49,9 @@ inputs:
     default: ''
 
 outputs:
-  app_id:
+  application_id:
     description: 'ID of the created application.'
+    value: ${{ steps.init.outputs.application_id }}
 runs:
   using: 'composite'
   steps:
@@ -70,6 +71,4 @@ runs:
     - run: cat  $GITHUB_ACTION_PATH/fluent-bit.conf
       shell: bash
     - run:  $GITHUB_ACTION_PATH/docker-compose.sh
-      shell: bash
-    - run: echo "::set-output name=app_id::${{ steps.init.outputs.application_id }}"
       shell: bash
