@@ -4,7 +4,7 @@ services:
   fluent-bit:
     image: fluent/fluent-bit
     volumes:
-      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+      - $GITHUB_ACTION_PATH/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
       - /var/lib/docker/containers:/containers
     network_mode: "host"
     logging:

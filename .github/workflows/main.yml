@@ -11,4 +11,4 @@ jobs:
         with:
           username: sashonedelkoski@gmail.com
           password: sasho123
-          application_name: ${{ github.ref }}
+          application_name: myapp
