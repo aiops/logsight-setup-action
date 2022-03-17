@@ -43,6 +43,10 @@ inputs:
     description: 'Logsight PORT. Use 443'
     required: false
     default: '443'
+  fluentbit_config:
+    description: 'If you want your own fluentbit config, use ONLY this entry to specifiy the file location'
+    required: false
+    default: ''
 
 outputs:
   application_id:
@@ -58,6 +62,10 @@ runs:
         password: ${{ inputs.password }}
         application_name: ${{ inputs.application_name}}
     - run:  $GITHUB_ACTION_PATH/fluentbit_config_generator.sh "${{ inputs.fluentbit_inputname}}" "${{ inputs.fluentbit_filelocation}}" "${{ inputs.fluentbit_matchpattern }}" "${{ steps.init.outputs.application_id }}" "${{ github.sha }}" "${{ inputs.fluentbit_message }}" "${{ inputs.fluentbit_host }}" "${{inputs.fluentbit_port }}" "${{ inputs.username }}" "${{ inputs.password }}" > $GITHUB_ACTION_PATH/fluent-bit.conf
+      if: ${{ inputs.fluentbit_config == '' }}
+      shell: bash
+    - run: cp ${{ inputs.fluentbit_config }} $GITHUB_ACTION_PATH/fluent-bit.conf
+      if: ${{ inputs.fluentbit_config != '' }}
       shell: bash
     - run: cat  $GITHUB_ACTION_PATH/fluent-bit.conf
       shell: bash
