@@ -9,6 +9,6 @@ jobs:
         uses: aiops/logsight-setup-action@main
         id: setup
         with:
-          username: sashonedelkoski@gmail.com
-          password: sasho123
-          application_name: myapp
+          username: ${{ secrets.LOGSIGHT_USERNAME }}
+          password: ${{ secrets.LOGSIGHT_PASSWORD }}
+          application_name: ${{ github.ref }}
