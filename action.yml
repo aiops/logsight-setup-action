@@ -50,7 +50,7 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - uses: aiops/logsight-init-action@master
+    - uses: aiops/logsight-init-action@main
       id: init
       with:
         username: ${{ inputs.username }}
