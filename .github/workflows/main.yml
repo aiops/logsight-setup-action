@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  logsight-setup-action:
+    runs-on: ubuntu-latest
+    name: A job that setups logsight.ai
+    steps:
+      - name: Logsight setup step
+        uses: aiops/logsight-setup-action@main
+        id: setup
+        with:
+          username: sashonedelkoski@gmail.com
+          password: sasho123
+          application_name: ${{ github.ref }}
