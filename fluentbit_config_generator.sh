@@ -17,6 +17,7 @@ echo "[INPUT]
     Path $fileLocation
     multiline.parser  docker, cri
     DB /tail_docker.db
+    Refresh_Interval 1
 [SERVICE]
     Flush 1
     Daemon Off
