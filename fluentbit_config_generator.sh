@@ -18,7 +18,8 @@ echo "[INPUT]
     multiline.parser  docker, cri
     DB /tail_docker.db
 [SERVICE]
-    flush 1
+    Flush 1
+    Daemon Off
 [FILTER]
     Name modify
     Match $matchPattern
