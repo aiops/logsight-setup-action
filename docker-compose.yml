@@ -7,3 +7,5 @@ services:
       - $GITHUB_ACTION_PATH/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
       - /:/host
     network_mode: "host"
+    logging:
+      driver: none
