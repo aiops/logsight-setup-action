@@ -26,7 +26,7 @@ inputs:
   fluentbit_filelocation:
     description: 'FluentBit file location if using tail as input (https://docs.fluentbit.io/manual/pipeline/inputs/tail)'
     required: false
-    default: '/containers/*/*.log'
+    default: '/host/var/lib/docker/containers/*/*.log'
   fluentbit_matchpattern:
     description: 'FluentBit match pattern. Use * if you want match all messages (https://docs.fluentbit.io/manual/concepts/key-concepts#match)'
     required: false

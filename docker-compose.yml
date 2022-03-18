@@ -5,7 +5,7 @@ services:
     image: fluent/fluent-bit
     volumes:
       - $GITHUB_ACTION_PATH/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
-      - /var/lib/docker/containers:/containers
+      - /:/host
     network_mode: "host"
     logging:
       driver: none
