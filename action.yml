@@ -34,7 +34,7 @@ inputs:
   fluentbit_message:
     description: 'FluentBit message string that specifies the Key that contains the log message. (e.g., if using Tail messages automatically have the Key message)'
     required: false
-    default: 'message'
+    default: 'log'
   fluentbit_host:
     description: 'Logsight URL. Use logsight.ai for the web service, or 127.0.0.1 for an on-premise solution'
     required: false
