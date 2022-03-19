@@ -35,9 +35,9 @@ inputs:
     required: false
     default: 'tail'
   fluentbit_filelocation:
-    description: 'FluentBit file location if using tail as input (https://docs.fluentbit.io/manual/pipeline/inputs/tail)'
+    description: 'FluentBit file location if using tail as input (https://docs.fluentbit.io/manual/pipeline/inputs/tail). As FluentBit is running into a container in your virutal machine. Our config mounts your host file system / to /host. Every location that you write starts with /host'
     required: false
-    default: '/containers/*/*.log'
+    default: '/host/var/lib/docker/containers/*/*.log'
   fluentbit_matchpattern:
     description: 'FluentBit match pattern. Use * if you want match all messages (https://docs.fluentbit.io/manual/concepts/key-concepts#match)'
     required: false
