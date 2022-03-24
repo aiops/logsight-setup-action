@@ -38,7 +38,7 @@ inputs:
   fluentbit_host:
     description: 'Logsight URL. Use logsight.ai for the web service, or 127.0.0.1 for an on-premise solution'
     required: false
-    default: 'demo.logsight.ai'
+    default: 'logsight.ai'
   fluentbit_port:
     description: 'Logsight PORT. Use 443'
     required: false
