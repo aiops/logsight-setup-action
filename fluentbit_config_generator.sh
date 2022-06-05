@@ -28,13 +28,14 @@ echo "[INPUT]
     Add tags.version $version
 [FILTER]
     Name nest
-    Match kube.*
+    Match $matchPattern
     Operation nest
     Wildcard tags.*
     Nested_under tags
     Remove_prefix tags.
 [OUTPUT]
     Name http
+    Match $matchPattern
     Host $host
     Port $port
     http_User $logsightUsername
