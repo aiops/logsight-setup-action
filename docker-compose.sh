@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd $GITHUB_ACTION_PATH
-docker-compose up -d
+docker-compose up
