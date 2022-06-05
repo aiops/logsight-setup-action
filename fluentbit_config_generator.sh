@@ -43,4 +43,5 @@ echo "[INPUT]
     uri /api/v1/logs/singles
     Format json
     json_date_format iso8601
-    json_date_key timestamp"
+    json_date_key timestamp
+    Retry_Limit False"
