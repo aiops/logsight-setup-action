@@ -6,7 +6,7 @@ jobs:
     name: A job that setups logsight.ai
     steps:
       - name: Logsight setup step
-        uses: aiops/logsight-setup-action@main
+        uses: aiops/logsight-setup-action@v1.1.0
         id: setup
         with:
           username: ${{ secrets.LOGSIGHT_USERNAME }}
