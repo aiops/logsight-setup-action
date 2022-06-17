@@ -7,7 +7,7 @@ inputs:
   password:
     description: 'Basic auth password.'
     required: true
-  application_name:
+  repository:
     description: 'Application name.'
     required: false
     default: ${{ github.event.repository.name }}
@@ -49,13 +49,13 @@ inputs:
     default: ''
 
 outputs:
-  application_name:
-    description: 'Name of the created application.'
-    value: ${{ inputs.application_name }}
+  repository:
+    description: 'Name of the repository.'
+    value: ${{ inputs.repository }}
 runs:
   using: 'composite'
   steps:
-    - run:  $GITHUB_ACTION_PATH/fluentbit_config_generator.sh "${{ inputs.fluentbit_inputname}}" "${{ inputs.fluentbit_filelocation}}" "${{ inputs.fluentbit_matchpattern }}" "${{ inputs.application_name }}" "${{ inputs.tag }}" "${{ inputs.fluentbit_message }}" "${{ inputs.fluentbit_host }}" "${{inputs.fluentbit_port }}" "${{ inputs.username }}" "${{ inputs.password }}" > $GITHUB_ACTION_PATH/fluent-bit.conf
+    - run:  $GITHUB_ACTION_PATH/fluentbit_config_generator.sh "${{ inputs.fluentbit_inputname}}" "${{ inputs.fluentbit_filelocation}}" "${{ inputs.fluentbit_matchpattern }}" "${{ inputs.repository }}" "${{ inputs.tag }}" "${{ inputs.fluentbit_message }}" "${{ inputs.fluentbit_host }}" "${{inputs.fluentbit_port }}" "${{ inputs.username }}" "${{ inputs.password }}" > $GITHUB_ACTION_PATH/fluent-bit.conf
       if: ${{ inputs.fluentbit_config == '' && inputs.fluentbit_enable }}
       shell: bash
     - run: cp ${{ inputs.fluentbit_config }} $GITHUB_ACTION_PATH/fluent-bit.conf

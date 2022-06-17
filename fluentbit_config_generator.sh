@@ -3,7 +3,7 @@
 inputName=$1
 fileLocation=$2
 matchPattern=$3
-applicationName=$4
+repository=$4
 version=$5
 message=$6
 host=$7
@@ -23,9 +23,9 @@ echo "[INPUT]
 [FILTER]
     Name modify
     Match $matchPattern
-    Add applicationName $applicationName
     Rename $message message
     Add tags.version $version
+    Add tags.repository $repository
 [FILTER]
     Name nest
     Match $matchPattern
