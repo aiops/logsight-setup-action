@@ -65,8 +65,8 @@ If you provide your own fluentbit config file please refer to https://docs.fluen
 
 ## Outputs
 
-#### `application_id`
-The ID of the application that was created. This id is used by https://github.com/aiops/logsight-verification-action.
+#### `repository`
+The name of the repository that was used for the action. This name is used by https://github.com/aiops/logsight-verification-action.
 
 ## Example usage
 
